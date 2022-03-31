@@ -2,13 +2,18 @@
 
 Project for [Biometric Systems](https://sites.google.com/a/di.uniroma1.it/biometric-systems/) and [Multimodal Interaction](https://sites.google.com/a/di.uniroma1.it/multimodal-interaction/) courses (A.Y. 2019/2020).
 
-**Authors**: Irene Cannistraci and Giovanni Ficarra ([@GioFic95]((https://github.com/GioFic95))).
+**Authors**: Irene Cannistraci and Giovanni Ficarra ([@GioFic95](https://github.com/GioFic95)).
 
 Details are available in the [slides](./slides.pdf) or in the full [report](./report.pdf).
 
 # Introduction
 **Multimodal YouTube** is an application designed and developed to be accessible by _deaf users_ and not that combines _biometric_ and _multimodal_ methodologies.
 The system was conceived to mimic a video music service that can be controlled using both **speech recognition** and **gesture recognition** methods. An enrolled user is **automatically** identified through a **facial identification** system that can also understand the user's current mood using an **emotion recognition** approach. Then, the specified user will be automatically redirected to a playlist of videos that reflects his/her mood. Then the user will be able to **interact** with the player (_e.g., raise the volume if it is too low or skip the song if it is not appreciated_) by using **hand gestures** and/or **voice commands**. During the enrollment phase, the user can register himself as a deaf user or not. This way, the system will know if it has to redirect the user to an ASL songs playlist. 
+
+<div align="center">
+<img src="./docs/demodeaf.png" width="250">
+<img src="./docs/demonotdeaf.png" width="250">
+</div>
 
 # Flow, Architecture and Interaction
 
@@ -21,7 +26,7 @@ The system was conceived to mimic a video music service that can be controlled u
 <img src="./docs/command.png" width="500">
 </div>
 
-  # Libraries & APIs
+# Libraries & APIs
 
 We integrate into our system existing services, such as libraries and APIs (see references). In details:
 
@@ -31,7 +36,6 @@ We integrate into our system existing services, such as libraries and APIs (see 
 * **Face and Emotion Recognition**: Face++ Face Detection and Search.
 * **Gesture Recognition**: Face++ Gesture Recognition.
 * **Speech Recognition**: Microsoft Azure Cognitive Services (Speech to Text).
-
 
 # Dataset 
 
@@ -65,12 +69,12 @@ We tested the system on all the 109 available pictures. We got **69%** of Accura
 
 The overall accuracy is quite good, but it changed considerably from class to class. In particular, for _sadness_ it is very lower than for the other classes:
 <div align="center">
-<img src="./docs/graf_emotion.jpg" width="250">
+<img src="./docs/graf_emotion.jpg" width="300">
 </div>
 
 It strictly depends on how much the user that takes the picture “forced” his facial expression to be sad, or not (i.e., a sad expression that is not forced is really hard to recognize). In fact, for example, in the following images, the first one was correctly classified as sad, while the second was considered neutral.
 <div align="center">
-<img src="./docs/sadness.png" width="300">
+<img src="./docs/sadness.png" width="400">
 </div>
 
 ## Gesture Recognition 
@@ -87,12 +91,12 @@ We tested the system on all the 187 available pictures. We got **58.82%** of Acc
 
 The hardest gesture to recognize was the index finger up. A possible explanation is that a lot of users made a wrong gesture since they created an “L” with their hand instead of raising only the index finger:
 <div align="center">
-<img src="./docs/finger_gesture.png" width="250">
+<img src="./docs/finger_gesture.png" width="300">
 </div>
 
 The overall accuracy was not so good this time, and it changed considerably from class to class. In particular, for index finger up and thumb down gestures, it is very low:
 <div align="center">
-<img src="./docs/graf_gesture.png" width="350">
+<img src="./docs/graf_gesture.png" width="400">
 </div>
 
 ## Voice Recognition
@@ -107,10 +111,10 @@ We got **81.29%** of Accuracy and **79.68%** of Recognition Accuracy (the number
 
 The accuracy was outstanding, and it did not change a lot from command to command. The only utterance that was a little bit problematic was a pause, where the accuracy is relatively lower than for the other voice commands:
 <div align="center">
-<img src="./docs/graf_voice.png" width="350">
+<img src="./docs/graf_voice.png" width="400">
 </div>
 
-# Demos
+# Demo
 We provided two demo available at the following links: [demo user deaf](https://www.youtube.com/watch?v=1lTGk85tQ-8&ab_channel=IreneCannistraci) and [demo user](https://www.youtube.com/watch?v=yjkMG3RedNA&ab_channel=IreneCannistraci) (not deaf).
 
 ## Deaf User
