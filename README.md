@@ -23,7 +23,7 @@ The system was conceived to mimic a video music service that can be controlled u
 
   # Libraries & APIs
 
-To develop our system, we took advantage of existing services such as libraries and APIs (see references). In details:
+We integrate into our system existing services, such as libraries and APIs (see references). In details:
 
 * **YouTube player**: libvlc, Pafy, youtube-dl, gtk (pyGObject), pydbus, mutagen.
 * **Database**: PostgreSQL (psycopg2).
@@ -148,7 +148,7 @@ The user is already **enrolled** in the database as “giovanni”.
 <img src="./docs/demonotdeaf.png" width="250">
 </div>
 
-### References
+## References
 * YouTube player: https://github.com/vn-ki/YoutubePlayer
 * GTK toolkit: https://www.gtk.org
 * youtube-dl: https://github.com/ytdl-org/youtube-dl
