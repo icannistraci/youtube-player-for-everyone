@@ -1,0 +1,52 @@
+#!/bin/bash
+
+INSTALLDIR="/opt/YouTubePlayer"
+ICONDIR="/usr/share/icons/hicolor/scalable/apps/youtubeplayer"
+
+CMD="$1"
+
+if [ $CMD = "install" ]; then
+  echo "Installing.."
+  sudo cp -r . $INSTALLDIR
+  sudo chmod +x $INSTALLDIR/main.py
+  sudo cp ./core/YouTubePlayer.desktop /usr/share/applications/YouTubePlayer.desktop
+  echo "Installation finished"
+
+elif [ $CMD = "uninstall" ]; then
+  echo "Uninstalling.."
+  sudo rm -rf $INSTALLDIR
+  sudo rm /usr/share/applications/YouTubePlayer.desktop
+  echo "Uninstallation finished"
+
+elif [ $CMD = "reinstall" ]; then
+  echo "Uninstalling.."
+  sudo rm -rf $INSTALLDIR
+  sudo rm /usr/share/applications/YouTubePlayer.desktop
+  echo "Uninstallation finished"
+  echo "Installing.."
+  sudo cp -r . $INSTALLDIR
+  sudo chmod +x $INSTALLDIR/main.py
+  sudo cp ./core/YouTubePlayer.desktop /usr/share/applications/YouTubePlayer.desktop
+  echo "Installation finished"
+
+elif [ $CMD = "update" ]; then
+  echo "Updating.."
+  cd /opt/YouTubePlayer
+  sudo git pull
+  echo "Update Finished!"
+
+elif [ $CMD = "run" ]; then
+  echo "Opening YouTube Player"
+  python3 ./main.py
+
+else
+  echo "Unknown option \"" $CMD "\""
+  echo ""
+  echo "Usage ./YouTubePlayer [option]"
+  echo ""
+  echo "OPTIONS :"
+  echo "    install        -  Installs YouTube Player"
+  echo "    uninstall      -  Uninstalls YouTube Player"
+  echo "    reinstall      -  Reinstalls YouTube Player"
+  echo "    run            -  Runs YouTube Player without installing"
+fi
